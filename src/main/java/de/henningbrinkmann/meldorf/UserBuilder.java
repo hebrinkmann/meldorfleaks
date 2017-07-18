@@ -10,7 +10,7 @@ public class UserBuilder {
     private static String[] firstNames = {"Axel", "Heinz", "Henner", "Klaus", "Tim", "Tina", "Julius", "Maylin", "Maurice", "Amadeo", "Amon", "Angela", "Ilka", "Juliane", "Erika"};
     private static String[] lastNames = {"Meyer", "Schröder", "Schmidt", "Fontane", "Papandreu", "Zimmermann", "Schneider", "Rodrigues", "Kinski", "Hartmann", "Fernandez", "Ronaldo"};
     private static String[] streets = {"Hauptstraße", "Waldweg", "Eichenweg", "Langer Zug", "Rondel", "Fritz-Schumacher-Allee", "Wiesenpfad", "Geert Sin Pad", "Kirchplatz", "Müllergasse"};
-    private static String[] cities = {"Hamburg", "Berlin", "München", "Geertsdörp", "Düsseldorf", "Obersdorf", "Flensburg", "Wilhelmshaven", "Frakfurt"};
+    private static String[] cities = {"Hamburg", "Berlin", "München", "Geertsdörp", "Düsseldorf", "Obersdorf", "Flensburg", "Wilhelmshaven", "Frankfurt"};
     private static char[] passwordChars = "0123456789".toCharArray();
     private static Random random = new Random(7);
 
@@ -94,7 +94,7 @@ public class UserBuilder {
         final int[] quersumme = {0};
 
         IntStream.range(0, chars.length).forEach(i -> {
-            int digit = chars[i] - '0';
+            int digit = Character.getNumericValue(chars[i]);
             quersumme[0] += digit;
         });
 
